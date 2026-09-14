@@ -88,20 +88,35 @@
     }).join("");
   }
 
+  /* Total installer downloads across all releases, as counted by GitHub.
+     Shown only once it is worth showing; a tiny number would do the opposite
+     of building trust. */
+  function downloads(list) {
+    var total = 0;
+    list.forEach(function (rel) {
+      (rel.assets || []).forEach(function (a) {
+        if (/\.exe$/.test(a.name)) total += a.download_count || 0;
+      });
+    });
+    fill("[data-downloads]", function (el) {
+      if (total < 100) { el.hidden = true; return; }
+      el.hidden = false;
+      var n = total >= 10000 ? Math.floor(total / 1000) + "k" : total.toLocaleString();
+      el.textContent = n + " downloads";
+    });
+  }
+
   var wantLatest = document.querySelector("[data-version], [data-download]");
   var wantLog = document.querySelector("[data-changelog]");
   if (!wantLatest && !wantLog) return;
 
-  fetch(API + (wantLog ? "?per_page=30" : "/latest"), { headers: { Accept: "application/vnd.github+json" } })
+  fetch(API + "?per_page=30", { headers: { Accept: "application/vnd.github+json" } })
     .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(function (data) {
-      if (wantLog) {
-        var releases = (data || []).filter(function (r) { return !r.draft && !r.prerelease; });
-        changelog(releases);
-        if (releases[0]) latest(releases[0]);
-      } else {
-        latest(data);
-      }
+      var releases = (data || []).filter(function (r) { return !r.draft && !r.prerelease; });
+      if (wantLog) changelog(releases);
+      if (releases[0]) latest(releases[0]);
+      downloads(releases);
     })
     .catch(function () {
       fill("[data-version-line]", function (el) { el.textContent = "Latest version"; });

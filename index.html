@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quire — a free PDF and EPUB reader with a phone remote</title>
+  <meta name="description" content="Quire is a fast, free PDF and EPUB reader for Windows. Highlights and notes, dark mode, Arabic and right-to-left books, and a phone remote to turn pages and highlight from your couch.">
+  <meta property="og:title" content="Quire — a free PDF and EPUB reader with a phone remote">
+  <meta property="og:description" content="Read PDFs and EPUBs on your desktop, turn pages and highlight from your phone. Free, no accounts, no telemetry.">
+  <meta property="og:image" content="img/reader-dark.png">
+  <meta name="theme-color" content="#4f6fe6">
+  <link rel="icon" href="img/favicon.png">
+  <link rel="apple-touch-icon" href="img/icon-256.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="./"><img src="img/icon-256.png" alt=""> Quire</a>
+      <nav class="nav">
+        <a href="#features">Features</a>
+        <a href="#remote">Phone remote</a>
+        <a href="#download">Download</a>
+        <a href="changelog.html">What's new</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="#support">Support</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="hero">
+        <div>
+          <h1>Read on the big screen.<br>Drive it from your phone.</h1>
+          <p class="lead">Quire is a free PDF and EPUB reader for Windows. Open a book, scan a code with your phone, and turn pages, jump to chapters or highlight a sentence without leaving the couch.</p>
+          <div class="cta">
+            <a class="btn primary big" href="download/" data-download>
+              Download for Windows <small data-version></small>
+            </a>
+            <span class="meta"><span data-version-line>Latest version</span><br>Free · Windows 10 and 11 · 64-bit</span>
+          </div>
+        </div>
+        <div class="hero-shots">
+          <img class="shot" src="img/reader-dark.png" alt="Quire reading a PDF in dark mode with highlights" width="1280" height="800">
+          <img class="phone" src="img/phone-remote.png" alt="The Quire phone remote" width="541" height="1101">
+        </div>
+      </div>
+
+      <section id="features">
+        <h2>A reader that stays out of the way</h2>
+        <p class="sub">No accounts, no cloud, no clutter. Your books, your highlights, one folder on your computer.</p>
+        <div class="grid">
+          <div class="card"><div class="ico">📄</div><h3>PDF and EPUB</h3><p>Both formats read as one long scrolling document. Zoom magnifies the page instead of reflowing it, so a map or a formula stays where you left it.</p></div>
+          <div class="card"><div class="ico">🖍️</div><h3>Highlights and notes</h3><p>Select, pick a colour, add a note. Highlights are anchored to the text and survive font or width changes in EPUBs. Export everything as text or Markdown.</p></div>
+          <div class="card"><div class="ico">🌙</div><h3>Dark mode that works</h3><p>Dark mode for the interface and for the page. Highlights stay visible, images stay untouched, and couch mode makes everything bigger from across the room.</p></div>
+          <div class="card"><div class="ico">ع</div><h3>Arabic and right-to-left</h3><p>RTL books, Arabic typography and mixed-direction text render the way they were meant to. Table of contents, find and locations all follow.</p></div>
+          <div class="card"><div class="ico">📚</div><h3>A quiet library</h3><p>Point Quire at your folders and it keeps up with them. Covers, authors and descriptions are looked up online if you want, or not at all.</p></div>
+          <div class="card"><div class="ico">⚡</div><h3>Small and fast</h3><p>Built on Tauri and the Windows web engine, Quire starts in a blink and the installer is a few megabytes, not a few hundred.</p></div>
+        </div>
+      </section>
+
+      <section id="remote">
+        <div class="split">
+          <div>
+            <h2>The phone remote</h2>
+            <p class="sub">Scan a QR code and your phone becomes a remote for the desktop, on your own Wi-Fi, with a one-time code. Nothing goes through a server.</p>
+            <ol class="steps">
+              <li><b>Turn pages and scroll</b>Swipe on the pad, jump to any chapter or highlight, toggle dark mode or couch mode.</li>
+              <li><b>Highlight without getting up</b>A cursor appears on the desktop. Move it with your thumb, press and hold to start selecting, drag to draw the selection, then pick a colour and type a note on the phone.</li>
+              <li><b>Or hand the book over</b>Open the book on the phone itself, at the same page, with pinch zoom and the same highlights.</li>
+            </ol>
+          </div>
+          <img class="shot" src="img/remote-cursor.png" alt="Selecting text on the desktop with the remote cursor" width="1280" height="800">
+        </div>
+      </section>
+
+      <section>
+        <div class="split reverse">
+          <div>
+            <h2>Made for long books in any language</h2>
+            <p class="sub">Choose the font, size, line height and column width once and every EPUB follows. Right-to-left books open on the correct side, and the table of contents, search and locations work the same in every direction.</p>
+            <p class="sub">PDFs get continuous scrolling, fit-to-width and fit-to-page, find with result highlighting, and an outline panel when the file has one.</p>
+          </div>
+          <img class="shot" src="img/reader-arabic.png" alt="An Arabic EPUB in Quire" width="1280" height="800">
+        </div>
+      </section>
+
+      <section id="download">
+        <h2>Download</h2>
+        <p class="sub">Quire is free. The installer is signed for the updater, so once installed it keeps itself up to date and tells you when a new version is ready.</p>
+        <div class="cta" style="margin-bottom:22px">
+          <a class="btn primary big" href="download/" data-download>Download Quire for Windows <small data-version></small></a>
+          <a class="btn" href="https://github.com/moumbou/quire-releases/releases/latest" data-release-page>All files and checksums</a>
+        </div>
+        <div class="note">
+          <b>Windows may show a "Windows protected your PC" screen the first time.</b>
+          Quire is made by one person and the installer does not yet carry a paid code-signing certificate, which is what that SmartScreen warning is about. Click <i>More info</i>, then <i>Run anyway</i>. The publisher will show as Unknown until the certificate is in place; the download itself always comes from the official
+          <a href="https://github.com/moumbou/quire-releases/releases" >releases page</a>, and every release ships with a <a href="https://github.com/moumbou/quire-releases/releases/latest" data-sums>SHA-256 checksum file</a> you can compare against.
+        </div>
+        <p class="small muted" style="margin-top:14px">Requirements: Windows 10 or 11, 64-bit. Installs for the current user, no administrator rights needed. Verify a download with <code>certutil -hashfile Quire-Setup.exe SHA256</code> in a terminal and compare it with the checksum file.</p>
+      </section>
+
+      <section id="support">
+        <h2>Support Quire</h2>
+        <p class="sub">Quire will stay free. If it earns a place on your desk, a small tip pays for the code-signing certificate and the Microsoft Store listing that will make that warning go away for everyone.</p>
+        <div class="cta">
+          <a class="btn primary" href="https://ko-fi.com/moumbou">Leave a tip</a>
+          <a class="btn" href="mailto:mbouzidi63@gmail.com?subject=Quire">Write to me</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>© 2026 Abderrahim Bouzidi · Quire is free to use, see the <a href="license.html">license</a>.</span>
+      <span><a href="privacy.html">Privacy</a> · <a href="changelog.html">What's new</a> · <a href="https://github.com/moumbou/quire-releases/releases">Releases</a></span>
+    </footer>
+  </div>
+  <script src="site.js"></script>
+</body>
+</html>

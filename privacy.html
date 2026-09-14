@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy — Quire</title>
+  <meta name="description" content="What Quire does with your data: nothing leaves your computer except an optional book lookup and an update check.">
+  <link rel="icon" href="img/favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="./"><img src="img/icon-256.png" alt=""> Quire</a>
+      <nav class="nav">
+        <a href="./#features">Features</a>
+        <a href="./#download">Download</a>
+        <a href="changelog.html">What's new</a>
+        <a href="privacy.html" class="on">Privacy</a>
+        <a href="./#support">Support</a>
+      </nav>
+    </header>
+
+    <main class="prose">
+      <h1>Privacy</h1>
+      <p class="muted">Last updated 14 September 2026</p>
+
+      <p>Quire is a desktop application. It has no accounts, no analytics, no crash reporting and no advertising. This page lists every situation in which it talks to the network, so there are no surprises.</p>
+
+      <h2>What stays on your computer</h2>
+      <p>Your books are never modified or uploaded. Your library (the list of books and where they are), reading positions, highlights, notes and settings are stored in a single folder under your Windows user profile (<code>%APPDATA%\com.nexaforgepixel.quire</code>). Delete that folder and Quire forgets everything. Uninstalling removes the application; the data folder is left in place so you can reinstall without losing highlights, and you can delete it by hand.</p>
+
+      <h2>When Quire connects to the internet</h2>
+      <h3>1. Book details (optional)</h3>
+      <p>When a book is added to the library, Quire can look up its cover, author and description. It sends the book's ISBN, or its title and author when there is no ISBN, to Google Books and Open Library, and nothing else. This lookup can be switched off in the library settings, in which case Quire uses only what is inside the file.</p>
+      <h3>2. Updates</h3>
+      <p>Quire checks for a new version shortly after it starts and about every six hours while it runs, by fetching a small file from GitHub (<code>github.com/moumbou/quire-releases</code>). The request contains the usual information any download does (your IP address and a user agent naming Quire and its version); nothing about you or your books. If a new version exists it is downloaded in the background and installed when you restart. You can turn automatic downloads off in <i>About Quire</i>; checking is then done only when you ask for it. Every update is signed, and Quire refuses an update whose signature does not match.</p>
+
+      <h2>The phone remote</h2>
+      <p>The remote runs a small web server inside Quire, on your computer, only while the remote panel is open. Your phone connects to it over your local network; the connection never goes through the internet or any server of mine. Pairing requires scanning the QR code or typing the one-time code shown on the desktop, and a new code is generated each time the panel is opened. When a book is "handed over" to the phone, the file is served to the phone over that same local connection and is not stored on the phone.</p>
+
+      <h2>What I can see</h2>
+      <p>Nothing. There is no server on my side, so I do not know how many people use Quire, which books they read or whether an update succeeded. The only thing I receive is whatever you choose to write to me by email.</p>
+
+      <h2>Third-party services</h2>
+      <p>The three services above have their own policies: <a href="https://policies.google.com/privacy">Google</a> (Books API), <a href="https://archive.org/about/terms.php">Internet Archive</a> (Open Library) and <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub</a> (downloads and updates). This website is hosted on GitHub Pages and uses no cookies or analytics; it makes one request to the GitHub API to display the current version number.</p>
+
+      <h2>Contact</h2>
+      <p>Questions about any of this: <a href="mailto:mbouzidi63@gmail.com?subject=Quire%20privacy">mbouzidi63@gmail.com</a>.</p>
+    </main>
+
+    <footer>
+      <span>© 2026 Abderrahim Bouzidi · Quire is free to use, see the <a href="license.html">license</a>.</span>
+      <span><a href="./">Home</a> · <a href="changelog.html">What's new</a> · <a href="https://github.com/moumbou/quire-releases/releases">Releases</a></span>
+    </footer>
+  </div>
+</body>
+</html>
